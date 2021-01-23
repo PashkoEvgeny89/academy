@@ -8,7 +8,7 @@ public class DegreeOfNumber2 {
 			System.out.println(" 2 v stepeni " + i + " = " + Math.pow(2, i));
 
 		}
-		// Найти произведение двузначных нечетных чисел кратных
+		
 	}
 
 }
