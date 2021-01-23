@@ -43,7 +43,6 @@ public class Discount {
 		}
 
 		System.out.print("itogo c uchetom skidki:" + itogo);
-		System.out.print("itogo c uchetom skidki:" + itogo);
 
 	}
 

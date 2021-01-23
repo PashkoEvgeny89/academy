@@ -11,13 +11,10 @@ public class SwitchCase {
 		String type;
 
 		Scanner input = new Scanner(System.in).useLocale(Locale.ENGLISH);
-
-		// .useLocale(Locale.ENGLISH) - kak ot etogo izbavitsj??????????
-
 		System.out.print("The type of the variable: ");
 		type = input.nextLine();
- 
-boolean t = Objects.equals(type, "int") || Objects.equals(type, "String") || Objects.equals(type, "double")
+
+		boolean t = Objects.equals(type, "int") || Objects.equals(type, "String") || Objects.equals(type, "double")
 				|| Objects.equals(type, "float") || Objects.equals(type, "char");
 
 		if (t) {
@@ -54,7 +51,7 @@ boolean t = Objects.equals(type, "int") || Objects.equals(type, "String") || Obj
 
 		} else {
 			System.out.println("Unsupported type  ");
-			
+
 		}
 
 		input.close();
