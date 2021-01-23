@@ -1,10 +1,10 @@
-package by.academy.lesson1;
+package by.academy.lesson2;
 
-public class HelloWorld {
+public class Wer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-System.out.println("HelloWorld");
+System.out.println("hello");
 	}
 
 }
