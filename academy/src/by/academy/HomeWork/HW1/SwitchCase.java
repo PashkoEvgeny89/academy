@@ -1,7 +1,7 @@
 package by.academy.HomeWork.HW1;
 
 import java.util.Locale;
-import java.util.Objects;
+
 import java.util.Scanner;
 
 public class SwitchCase {
@@ -14,42 +14,39 @@ public class SwitchCase {
 		System.out.print("The type of the variable: ");
 		type = input.nextLine();
 
-		boolean t = Objects.equals(type, "int") || Objects.equals(type, "String") || Objects.equals(type, "double")
-				|| Objects.equals(type, "float") || Objects.equals(type, "char");
+		switch (type) {
 
-		if (t) {
-
+		case ("int"):
 			System.out.print("The value of the variable: ");
+			int a = input.nextInt();
+			System.out.println("Ostatok ot delenija na 2: " + a % 2);
+			break;
 
-			switch (type) {
+		case ("double"):
+			System.out.print("The value of the variable: ");
+			double d = input.nextDouble();
+			System.out.println("70% ot chisla: " + d * 0.7);
+			break;
 
-			case ("int"):
-				int a = input.nextInt();
-				System.out.println("Ostatok ot delenija na 2: " + a % 2);
-				break;
+		case ("float"):
+			System.out.print("The value of the variable: ");
+			float f = input.nextFloat();
+			System.out.println("znachenie v stepeni 2: " + f * f);
+			break;
 
-			case ("double"):
-				double d = input.nextDouble();
-				System.out.println("70% ot chisla: " + d * 0.7);
-				break;
+		case ("char"):
+			System.out.print("The value of the variable: ");
+			char ch = input.next().charAt(0);
+			System.out.println("Kod simvola " + "'" + ch + "'" + ": " + (int) ch);
+			break;
 
-			case ("float"):
-				float f = input.nextFloat();
-				System.out.println("znachenie v stepeni 2: " + f * f);
-				break;
+		case ("String"):
+			System.out.print("The value of the variable: ");
+			String s = input.nextLine();
+			System.out.println("Hello " + s);
+			break;
 
-			case ("char"):
-				char ch = input.next().charAt(0);
-				System.out.println("Kod simvola " + "'" + ch + "'" + ": " + (int) ch);
-				break;
-
-			case ("String"):
-				String s = input.nextLine();
-				System.out.println("Hello " + s);
-				break;
-			}
-
-		} else {
+		default:
 			System.out.println("Unsupported type  ");
 
 		}
