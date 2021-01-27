@@ -23,6 +23,7 @@ public class Task1 {
 		}
 
 		System.out.println(Arrays.toString(array));
+		System.out.println("aseggerg");
 		sc1.close();
 	}
 
