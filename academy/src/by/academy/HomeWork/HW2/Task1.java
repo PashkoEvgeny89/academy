@@ -16,6 +16,8 @@ public class Task1 {
 		StringBuffer str22 = new StringBuffer(str2);
 
 		if (str1.length() == str2.length()) {
+			
+			// delete the same characters in two lines
 
 			for (int i = 0; i < str1.length(); i++) {
 				for (int q = 0; q < str11.length(); q++) {
