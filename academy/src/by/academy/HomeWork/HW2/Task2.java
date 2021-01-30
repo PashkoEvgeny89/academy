@@ -1,6 +1,5 @@
 package by.academy.HomeWork.HW2;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -20,8 +19,6 @@ public class Task2 {
 		}
 
 		HashMap<Integer, String> lengthword = new HashMap<>();
-		int[] key = new int[n];
-
 		for (int i = array.length - 1; i >= 0; i--) {
 			StringBuffer word = new StringBuffer(array[i]);
 
@@ -36,16 +33,10 @@ public class Task2 {
 			}
 			// saving the number (Key) of different characters in a word and its meaning (Value)
 			lengthword.put(word.length(), array[i]);
-			key[i] = word.length();
 		}
-
-		Arrays.sort(key);
-
-		System.out.println(
-				"The first word in which the number of different characters is minimal: " + lengthword.get(key[0]));
-
+		System.out.println("The first word in which the number of different characters is minimal: "
+				+ lengthword.get(lengthword.keySet().toArray()[0]));
 		sc.close();
-
+		System.out.println(lengthword);
 	}
-
 }
