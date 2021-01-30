@@ -13,28 +13,28 @@ public class Task4 {
 		int n = sc.nextInt();
 		sc.close();
 
-		ArrayList<String> koloda = new ArrayList<String>();
+		ArrayList<String> deck = new ArrayList<String>();
 		String[] masti = { "_chervi", "_bubna", "_trevi", "_piki" };
 		String[] big = { "V", "D", "K", "T" };
 		for (int q = 0; q < masti.length; q++) {
 			for (int i = 2; i <= 10; i++) {
-				koloda.add(i + masti[q]);
+				deck.add(i + masti[q]);
 			}
 			for (int k = 0; k < big.length; k++) {
-				koloda.add(big[k] + masti[q]);
+				deck.add(big[k] + masti[q]);
 			}
 		}
 		int s = 5; // the number of cards each player has
-		if (n > koloda.size() / s) {
+		if (n > deck.size() / s) {
 			System.out.println("Too many players! MAX 10. Go play MAFIA");
 		} else {
 			String[][] player = new String[n][s];
 			Random rand = new Random();
 			for (int q = 0; q < n; q++) {
 				for (int i = 0; i < s; i++) {
-					player[q][i] = koloda.get(rand.nextInt(koloda.size()));
+					player[q][i] = deck.get(rand.nextInt(deck.size()));
 					System.out.print(player[q][i] + "  ");
-					koloda.remove(player[q][i]);
+					deck.remove(player[q][i]);
 				}
 				System.out.println();
 				System.out.println();
