@@ -14,7 +14,6 @@ public class Task2 {
       
         System.out.print(str.replaceAll("\\s+", " ").trim());
 
-       
         
       
 	}
