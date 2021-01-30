@@ -14,7 +14,6 @@ public class Task4 {
 		sc.close();
 
 		ArrayList<String> koloda = new ArrayList<String>();
-
 		String[] masti = { "_chervi", "_bubna", "_trevi", "_piki" };
 		String[] big = { "V", "D", "K", "T" };
 		for (int q = 0; q < masti.length; q++) {
@@ -24,26 +23,22 @@ public class Task4 {
 			for (int k = 0; k < big.length; k++) {
 				koloda.add(big[k] + masti[q]);
 			}
-
 		}
-
-		// не работает !!!!!!!!!!!
-		
-		String[][] igroki = new String[n][5];
-
-		Random rand = new Random();
-		for (int q = 0; q < n; q++) {
-
-			for (int i = 0; i < 5; i++) {
-
-				igroki[q][i] = koloda.get(rand.nextInt(koloda.size() + 1));
-				System.out.print(igroki[q][i] + "  ");
-				koloda.remove(igroki[q][i]);
+		int s = 5; // the number of cards each player has
+		if (n > koloda.size() / s) {
+			System.out.println("Too many players! MAX 10. Go play MAFIA");
+		} else {
+			String[][] player = new String[n][s];
+			Random rand = new Random();
+			for (int q = 0; q < n; q++) {
+				for (int i = 0; i < s; i++) {
+					player[q][i] = koloda.get(rand.nextInt(koloda.size()));
+					System.out.print(player[q][i] + "  ");
+					koloda.remove(player[q][i]);
+				}
+				System.out.println();
+				System.out.println();
 			}
-			System.out.println();
-			System.out.println();
 		}
-
 	}
-
 }
