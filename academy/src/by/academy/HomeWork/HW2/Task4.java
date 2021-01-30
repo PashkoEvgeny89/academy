@@ -13,6 +13,7 @@ public class Task4 {
 		int n = sc.nextInt();
 		sc.close();
 
+		// Creating a deck of cards
 		ArrayList<String> deck = new ArrayList<String>();
 		String[] masti = { "_chervi", "_bubna", "_trevi", "_piki" };
 		String[] big = { "V", "D", "K", "T" };
@@ -28,6 +29,8 @@ public class Task4 {
 		if (n > deck.size() / s) {
 			System.out.println("Too many players! MAX 10. Go play MAFIA");
 		} else {
+
+			// distribution of random cards to players
 			String[][] player = new String[n][s];
 			Random rand = new Random();
 			for (int q = 0; q < n; q++) {

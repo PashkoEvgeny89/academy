@@ -10,7 +10,7 @@ public class Task2 {
 		System.out.print("How many words do you want to enter?: ");
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		System.out.println("Enter " + n + " words:");
+		System.out.println("Enter " + n + " words: ");
 
 		String[] array = new String[n];
 		sc.nextLine();
