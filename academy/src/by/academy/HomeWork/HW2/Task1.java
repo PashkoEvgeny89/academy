@@ -26,6 +26,9 @@ public class Task1 {
 						str22 = str22.deleteCharAt(q);
 					}
 				}
+				
+				// int[] array=new int[256];
+				
 			}
 		}
 

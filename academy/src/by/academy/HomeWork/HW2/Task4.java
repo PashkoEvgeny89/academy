@@ -27,6 +27,8 @@ public class Task4 {
 
 		}
 
+		// не работает !!!!!!!!!!!
+		
 		String[][] igroki = new String[n][5];
 
 		Random rand = new Random();
