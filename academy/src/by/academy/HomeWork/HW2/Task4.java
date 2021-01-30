@@ -31,7 +31,7 @@ public class Task4 {
 
 		Random rand = new Random();
 		for (int q = 0; q < n; q++) {
-		
+
 			for (int i = 0; i < 5; i++) {
 
 				igroki[q][i] = koloda.get(rand.nextInt(koloda.size() + 1));
