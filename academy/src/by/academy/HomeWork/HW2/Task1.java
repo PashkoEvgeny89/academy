@@ -18,7 +18,6 @@ public class Task1 {
 		if (str1.length() == str2.length()) {
 			
 			// delete the same characters in two lines
-
 			for (int i = 0; i < str1.length(); i++) {
 				for (int q = 0; q < str11.length(); q++) {
 					if (str11.charAt(0) == str22.charAt(q)) {
@@ -26,16 +25,11 @@ public class Task1 {
 						str22 = str22.deleteCharAt(q);
 					}
 				}
-				
-				// int[] array=new int[256];
-				
 			}
 		}
-
 		if (str11.length() == 0) {
 			System.out.println("true");
 		}
-
 		else {
 			System.out.println("false");
 		}
