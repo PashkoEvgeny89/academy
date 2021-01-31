@@ -1,21 +1,21 @@
-package by.academy.HomeWork.HW2;
+package by.academy.classwork.lesson6;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Task2 {
+public class Task2HWupgrade {
 
 	static void RemovingDuplicateCharacters(HashMap<Integer, String> abc, String s) {
 
 		StringBuffer word = new StringBuffer(s);
-
+		
 		for (int q = 0; q < word.length(); q++) {
 			for (int p = q + 1; p < word.length(); p++)
 				if (word.charAt(q) == word.charAt(p)) {
 					word = word.deleteCharAt(p);
 				}
 		}
-		abc.put(word.length(), s); // saving the number (Key) of different characters in a word
+		abc.put(word.length(), s); 	// saving the number (Key) of different characters in a word 
 									// and its meaning (Value)
 	}
 
@@ -28,7 +28,7 @@ public class Task2 {
 
 		String[] array = new String[n];
 		sc.nextLine();
-
+		
 		for (int i = 0; i < array.length; i++) {
 			array[i] = sc.nextLine();
 		}
