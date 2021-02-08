@@ -2,7 +2,7 @@ package by.academy.deal;
 
 public class Cheese extends Product {
 
-	String smell;
+	private int age;
 	String color;
 	
 	Cheese(){
@@ -12,12 +12,15 @@ public class Cheese extends Product {
 	void eat(){
 		System.out.println("eat");
 	}
-	public String getSmell() {
-		return smell;
+	
+	public int getAge() {
+		return age;
 	}
-	public void setSmell(String smell) {
-		this.smell = smell;
+
+	public void setAge(int age) {
+		this.age = age;
 	}
+
 	public String getColor() {
 		return color;
 	}
@@ -27,4 +30,11 @@ public class Cheese extends Product {
 	void cutting() {
 		System.out.println("cutting");
 	}
+	
+	public void discount(int age) {
+		if (age>20) {
+			price=price-price*0.2;
+		}
+	}
+	
 }

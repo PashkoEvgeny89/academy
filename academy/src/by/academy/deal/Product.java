@@ -37,5 +37,20 @@ public class Product {
 			this.quantity = quantity;
 		}
 		
+		
+		
+		public Double discount() {
+			
+			if (quantity>20) {
+				return
+				price=price*0.9*quant;
+				
+			}
+			
+		}
+		
 
+		
+		
+		
 }

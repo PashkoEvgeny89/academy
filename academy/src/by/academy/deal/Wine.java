@@ -2,30 +2,49 @@ package by.academy.deal;
 
 public class Wine extends Product {
 
-	Double volume;
+	private String country;
 	String color;
-	
-	Wine(){
+
+	public Wine(Double price, String name, String manufacture, Integer quantity, String country) {
+		super(price, name, manufacture, quantity);
+		this.country = country;
+	}
+
+	Wine() {
 		super();
 	}
-	
-	public Double getVolume() {
-		return volume;
+
+	public String getCountry() {
+		return country;
 	}
-	public void setVolume(Double volume) {
-		this.volume = volume;
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
+
 	public String getColor() {
 		return color;
 	}
+
 	public void setColor(String color) {
 		this.color = color;
 	}
-	void drink(){
+
+	void drink() {
 		System.out.println("drink");
 	}
+
 	void pay() {
 		System.out.println("pay");
+
 	}
-	
+
+	@Override
+	public void discount(String country) {
+
+		if (country.equals("Georgia")) {
+			price = price * 0.8;
+		}
+	}
+
 }

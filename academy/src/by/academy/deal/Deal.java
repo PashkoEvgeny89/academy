@@ -4,7 +4,7 @@ public class Deal {
 
 	Person seller;
 	Person buyer;
-	Product[] product;
+	Product[] products;
 	String dealDate;
 	
 	Deal(){
@@ -23,10 +23,10 @@ public class Deal {
 		this.buyer = buyer;
 	}
 	public Product[] getProduct() {
-		return product;
+		return products;
 	}
 	public void setProduct(Product[] product) {
-		this.product = product;
+		this.products = product;
 	}
 	public String getDealDate() {
 		return dealDate;
@@ -34,6 +34,16 @@ public class Deal {
 	public void setDealDate(String dealDate) {
 		this.dealDate = dealDate;
 	}
+	
+	public Double checkBill() {
+		Double checkSum=0.0;
+		
+		for (Product tmp:products) {
+			checkSum+=tmp.getPrice()*tmp.getQuantity()*tmp.discount();			
+			}
+		return checkSum;
+	}
+
 	
 	
 }
