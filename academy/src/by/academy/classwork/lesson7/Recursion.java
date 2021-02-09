@@ -10,8 +10,9 @@ public class Recursion {
 		} 
 		
 		if (b<a){
+			
+			--a;
 			System.out.println(a);
-			a--;
 			rec(a, b);
 		}
 	}
@@ -27,7 +28,7 @@ public class Recursion {
 
 	public static void main(String[] args) {
 
-		rec(9, 2);
+		rec(2, 9);
 	}
 
 }
