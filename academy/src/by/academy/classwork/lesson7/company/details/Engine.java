@@ -7,7 +7,7 @@ String manufacturer;
 Engine(){
 	super();
 }
-Engine(int horsePower, String manufacturer){
+public Engine(int horsePower, String manufacturer){
 	this.horsePower=horsePower;
 	this.manufacturer=manufacturer;
 }
