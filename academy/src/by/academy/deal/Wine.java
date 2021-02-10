@@ -6,7 +6,7 @@ public class Wine extends Product {
 	String color;
 
 	public Wine(Double price, String name, String manufacture, Integer quantity, String country) {
-		super(price, name, manufacture, quantity);
+		super(name, price, manufacture, quantity);
 		this.country = country;
 	}
 

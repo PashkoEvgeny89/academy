@@ -7,6 +7,13 @@ public class Product {
 		String manufacture;
 		Integer quantity;
 		
+		Product(String name, Double price, String manufacture, Integer quantity){
+			this.name=name;
+			this.price=price;
+			this.manufacture=manufacture;
+			this.quantity=quantity;
+		}
+		
 		Product(){
 			super();
 		}
@@ -40,10 +47,10 @@ public class Product {
 		
 		
 		public Double discount() {
-			
+			Double price=0;
 			if (quantity>20) {
 				return
-				price=price*0.9*quant;
+				price=price*0.9;
 				
 			}
 			
