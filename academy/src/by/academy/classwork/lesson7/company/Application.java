@@ -12,7 +12,7 @@ public class Application {
 	//	car1.printInfo();
 		
 		Engine engine=new Engine(345,"fordmotors");
-		Car car1=new Car("Bently", 2350);
+		Car car1=new Car("Bently", 2350, engine);
 		car1.printInfo();
 		
 	}

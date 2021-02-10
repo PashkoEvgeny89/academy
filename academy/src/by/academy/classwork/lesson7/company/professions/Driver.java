@@ -4,7 +4,7 @@ public class Driver {
 
 	String name;
 	int driveYears;
-	Driver(){
+	protected Driver(){
 		super();
 	}
 	Driver(String name, int driveYears){

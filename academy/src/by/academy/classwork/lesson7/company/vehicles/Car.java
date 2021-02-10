@@ -15,9 +15,10 @@ public class Car {
 	public void printInfo() {
 		System.out.println("brand: "+getBrand()+"   weight: "+getWeight()+ "   engine horse power: "+engine.getHorsePower());
 	}
-	public Car(String brand, int weight) {
+	public Car(String brand, int weight, Engine engine) {
 		this.brand=brand;
 		this.weight=weight;
+		this.engine=engine;
 	}
 	
 	public void start() {
