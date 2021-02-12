@@ -1,4 +1,4 @@
-package by.academy.Reader;
+package by.academy.classwork.lesson8;
 
 public class Reader {
 
