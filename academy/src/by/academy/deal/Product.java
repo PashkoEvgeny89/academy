@@ -1,63 +1,77 @@
 package by.academy.deal;
 
-public class Product {
+public abstract class Product {
 
-		String name;
-		Double price;
-		String manufacture;
-		Integer quantity;
-		
-		Product(String name, Double price, String manufacture, Integer quantity){
-			this.name=name;
-			this.price=price;
-			this.manufacture=manufacture;
-			this.quantity=quantity;
-		}
-		
-		Product(){
-			super();
-		}
-		
-		
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public Double getPrice() {
-			return price;
-		}
-		public void setPrice(Double price) {
-			this.price = price;
-		}
-		public String getManufacture() {
-			return manufacture;
-		}
-		public void setManufacture(String manufacture) {
-			this.manufacture = manufacture;
-		}
-		public Integer getQuantity() {
-			return quantity;
-		}
-		public void setQuantity(Integer quantity) {
-			this.quantity = quantity;
-		}
-		
-		
-		
-		public Double discount() {
-			Double price=0;
-			if (quantity>20) {
-				return
-				price=price*0.9;
-				
-			}
-			
-		}
-		
+	private String type;
+	private double price;
+	private String manufacturer;
+	private int quantity;
 
-		
-		
-		
+	Product(String type, double price, String manufacturer, int quantity) {
+		this.type = type;
+		this.price = price;
+		this.manufacturer = manufacturer;
+		this.quantity = quantity;
+	}
+
+	public double discount() {
+		if (quantity > 20) {
+			return 0.9;
+		} else {
+			return 1.0;
+		}
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getManufacturer() {
+		return manufacturer;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	Product() {
+		super();
+	}
+	
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Product [type=");
+		builder.append(type);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", manufacturer=");
+		builder.append(manufacturer);
+		builder.append(", quantity=");
+		builder.append(quantity);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

@@ -2,17 +2,27 @@ package by.academy.deal;
 
 public class Cheese extends Product {
 
-	private int age;
-	String color;
-	
-	Cheese(){
+	int age;
+	String smell;
+
+	public Cheese(String type, double price, String manufacturer, int quantity, int age) {
+		super(type, price, manufacturer, quantity);
+		this.age = age;
+	}
+
+	@Override
+	public double discount() {
+		if (age > 20) {
+			return 0.8;
+		} else {
+			return 1;
+		}
+	}
+
+	Cheese() {
 		super();
 	}
-	
-	void eat(){
-		System.out.println("eat");
-	}
-	
+
 	public int getAge() {
 		return age;
 	}
@@ -21,20 +31,12 @@ public class Cheese extends Product {
 		this.age = age;
 	}
 
-	public String getColor() {
-		return color;
+	public String getSmell() {
+		return smell;
 	}
-	public void setColor(String color) {
-		this.color = color;
+
+	public void setSmell(String smell) {
+		this.smell = smell;
 	}
-	void cutting() {
-		System.out.println("cutting");
-	}
-	
-	public void discount(int age) {
-		if (age>20) {
-			price=price-price*0.2;
-		}
-	}
-	
+
 }

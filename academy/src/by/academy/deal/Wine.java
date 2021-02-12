@@ -1,25 +1,17 @@
 package by.academy.deal;
 
 public class Wine extends Product {
-
-	private String country;
+	
 	String color;
-
-	public Wine(Double price, String name, String manufacture, Integer quantity, String country) {
-		super(name, price, manufacture, quantity);
+	String country;
+	
+	public Wine(String type, double price, String manufacturer, int quantity, String country) {
+		super(type, price, manufacturer, quantity);
 		this.country = country;
 	}
-
-	Wine() {
+	
+	Wine(){
 		super();
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 	public String getColor() {
@@ -30,21 +22,23 @@ public class Wine extends Product {
 		this.color = color;
 	}
 
-	void drink() {
-		System.out.println("drink");
+	public String getCountry() {
+		return country;
 	}
 
-	void pay() {
-		System.out.println("pay");
-
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	@Override
-	public void discount(String country) {
-
-		if (country.equals("Georgia")) {
-			price = price * 0.8;
+	public double discount() {
+		if (country.equals("Georgi")) {
+			return 0.83;
+		} else {
+			return 1;
 		}
 	}
+	
+	
 
 }
