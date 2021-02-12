@@ -1,5 +1,7 @@
 package by.academy.deal;
 
+import java.util.Date;
+
 public class Deal {
 
 	public final static int DEFAULT_PRODUCT_SIZE = 2;
@@ -9,6 +11,7 @@ public class Deal {
 	private Person buyer;
 	private Product[] products;
 	private int productCounter;
+	
 
 	public Deal() {
 		super();
@@ -99,4 +102,6 @@ public class Deal {
 
 		return checkSum;
 	}
+	
+	Date deadLine;
 }

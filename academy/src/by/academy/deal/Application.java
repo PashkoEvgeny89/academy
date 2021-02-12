@@ -17,8 +17,8 @@ public class Application {
 
 		deal.deal();
 		
-		RegExpDate q=new RegExpDate();
-		q.regExpDate(deal.getDate());
+		RegExpDate red=new RegExpDate();
+		red.regExpDate(deal.getDate());
 	}
 }
 	
