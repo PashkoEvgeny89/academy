@@ -1,6 +1,7 @@
 package by.academy.deal;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Deal {
 
@@ -22,6 +23,12 @@ public class Deal {
 		this.date = date;
 		this.seller = seller;
 		this.buyer = buyer;
+	}
+	
+	public void deadline() {
+		Calendar calendar = new GregorianCalendar();
+		calendar.add(Calendar.DAY_OF_MONTH, 10);
+		System.out.println("Deadline date:"+calendar.getTime());
 	}
 
 	public String getDate() {
@@ -98,10 +105,11 @@ public class Deal {
 			}
 		}
 		System.out.println("-----------------------------");
-		System.out.println("Total price: " + checkSum);
+		System.out.println("Total price: " + checkSum+ "\n");
 
 		return checkSum;
+		
 	}
 	
-	Date deadLine;
+	
 }
