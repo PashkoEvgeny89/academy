@@ -23,7 +23,7 @@ public abstract class Product {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 	public final double calcTotalPrice() {
 		return quantity * price * discount();
 	}
@@ -55,8 +55,7 @@ public abstract class Product {
 	Product() {
 		super();
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

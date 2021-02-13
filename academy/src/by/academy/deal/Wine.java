@@ -1,16 +1,16 @@
 package by.academy.deal;
 
 public class Wine extends Product {
-	
+
 	String color;
 	String country;
-	
+
 	public Wine(String type, double price, String manufacturer, int quantity, String country) {
 		super(type, price, manufacturer, quantity);
 		this.country = country;
 	}
-	
-	Wine(){
+
+	Wine() {
 		super();
 	}
 
@@ -38,7 +38,5 @@ public class Wine extends Product {
 			return 1;
 		}
 	}
-	
-	
 
 }
