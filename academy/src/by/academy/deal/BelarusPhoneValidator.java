@@ -11,7 +11,7 @@ public class BelarusPhoneValidator implements Validator {
 	public boolean validate(String str) {
 
 		Matcher matcher = pattern.matcher(str);
-		return matcher.matches();
+		return  matcher.matches();
 	}
 
 }

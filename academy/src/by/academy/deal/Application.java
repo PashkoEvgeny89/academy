@@ -22,6 +22,9 @@ public class Application {
 		RegExpDate red=new RegExpDate();  //Task 3, Task 4
 		red.regExpDate(deal.getDate());
 	
+		BelarusPhoneValidator q=new BelarusPhoneValidator();  //Task 5, Task 9
+		System.out.println("\n"+q.validate(deal.getBuyer().getPhone()));
+		
 	}
 }
 	
