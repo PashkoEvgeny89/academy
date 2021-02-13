@@ -6,12 +6,12 @@ public class Application {
 		DayOfWeek dayofweek=DayOfWeek.Monday;
 		
 		for (DayOfWeek c: DayOfWeek.values()) {
-			System.out.println(c);
+			System.out.println(c+" "+c.getDayNumber());
 		}
 
 		switch (dayofweek) {
 		case Monday:
-			System.out.println("Today Monday ");
+			System.out.println("Today Monday "+dayofweek.getDayNumber());
 			break;
 		case Tuesday:
 			System.out.println("Today Tuesday ");
