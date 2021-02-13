@@ -32,7 +32,7 @@ public class Wine extends Product {
 
 	@Override
 	public double discount() {
-		if (country.equals("Georgi")) {
+		if (country.equals("Georgia")) {
 			return 0.83;
 		} else {
 			return 1;
