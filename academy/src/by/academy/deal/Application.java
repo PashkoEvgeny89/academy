@@ -15,19 +15,13 @@ public class Application {
 		deal.addProduct(new Wine("Wine", 24.5, "Sacebeli", 7, "Georgia"));
 		deal.addProduct(new Milk("Milk", 1.7, "Prostokvashino", 21, 1.5));
 
-		
-
 		deal.deal();
-		
-	
 		
 		deal.deadline(); // Task 7
 		
 		RegExpDate red=new RegExpDate();  //Task 3, Task 4
 		red.regExpDate(deal.getDate());
-	;
-		
-		
+	
 	}
 }
 	
