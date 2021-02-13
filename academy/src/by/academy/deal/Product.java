@@ -2,10 +2,10 @@ package by.academy.deal;
 
 public abstract class Product {
 
-	private String type;
-	private double price;
-	private String manufacturer;
-	private int quantity;
+	protected String type;
+	protected double price;
+	protected String manufacturer;
+	protected int quantity;
 
 	Product(String type, double price, String manufacturer, int quantity) {
 		this.type = type;
@@ -14,13 +14,7 @@ public abstract class Product {
 		this.quantity = quantity;
 	}
 
-	public double discount() {
-		if (quantity > 20) {
-			return 0.9;
-		} else {
-			return 1.0;
-		}
-	}
+	public abstract double discount();
 
 	public String getType() {
 		return type;
@@ -28,6 +22,10 @@ public abstract class Product {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public final double calcTotalPrice() {
+		return quantity * price * discount();
 	}
 
 	public double getPrice() {
