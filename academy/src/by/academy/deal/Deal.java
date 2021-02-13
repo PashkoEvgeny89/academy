@@ -12,7 +12,6 @@ public class Deal {
 	private Person buyer;
 	private Product[] products;
 	private int productCounter;
-	
 
 	public Deal() {
 		super();
@@ -24,11 +23,11 @@ public class Deal {
 		this.seller = seller;
 		this.buyer = buyer;
 	}
-	
+
 	public void deadline() {
 		Calendar calendar = new GregorianCalendar();
 		calendar.add(Calendar.DAY_OF_MONTH, 10);
-		System.out.println("Deadline date: "+calendar.getTime());
+		System.out.println("Deadline date: " + calendar.getTime());
 	}
 
 	public String getDate() {
@@ -74,25 +73,20 @@ public class Deal {
 		}
 		products[productCounter++] = product;
 	}
-	
 
 	private void expandProductArray() {
 		Product[] tempArray = new Product[products.length * 2 + 1];
 		System.arraycopy(products, 0, tempArray, 0, products.length);
 		products = tempArray;
 	}
-	
-	
-	
 
 	public Double deal() {
 		Double checkSum = 0.0;
 
 		for (Product tmp : products) {
 			if (tmp != null) {
-				
+
 				double d = tmp.getPrice() * tmp.getQuantity() * tmp.discount();
-				
 
 				if (tmp instanceof Milk) {
 					System.out.print("Milk: ");
@@ -101,21 +95,17 @@ public class Deal {
 				} else if (tmp instanceof Wine) {
 					System.out.print("Wine: ");
 				}
-				
-				d=Math.ceil(d * 100) / 100; // rounding up the invoice
-				
+
+				d = Math.ceil(d * 100) / 100; // rounding up the invoice
+
 				System.out.println(tmp.getPrice() + " x " + tmp.getQuantity() + " x " + tmp.discount() + " = " + d);
 				checkSum += d;
 			}
 		}
-		System.out.println("-----------------------------");
-		System.out.println("Total price: " + checkSum+ "\n");
+		System.out.println("----------------------------");
+		System.out.println("Total price: " + checkSum + "\n");
 
 		return checkSum;
-		
+
 	}
-	
-	
-	
-	
 }
