@@ -28,7 +28,7 @@ public class Deal {
 	public void deadline() {
 		Calendar calendar = new GregorianCalendar();
 		calendar.add(Calendar.DAY_OF_MONTH, 10);
-		System.out.println("Deadline date:"+calendar.getTime());
+		System.out.println("Deadline date: "+calendar.getTime());
 	}
 
 	public String getDate() {
@@ -74,12 +74,16 @@ public class Deal {
 		}
 		products[productCounter++] = product;
 	}
+	
 
 	private void expandProductArray() {
 		Product[] tempArray = new Product[products.length * 2 + 1];
 		System.arraycopy(products, 0, tempArray, 0, products.length);
 		products = tempArray;
 	}
+	
+	
+	
 
 	public Double deal() {
 		Double checkSum = 0.0;
@@ -110,6 +114,8 @@ public class Deal {
 		return checkSum;
 		
 	}
+	
+	
 	
 	
 }
