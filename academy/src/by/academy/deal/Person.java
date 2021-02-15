@@ -1,16 +1,34 @@
 package by.academy.deal;
 
+import java.util.Scanner;
+
 public class Person {
-	String name;
-	String phone;
-	String email;
-	Double money;
+	private String name;
+	private String phone;
+	private String email;
+	private Double money;
+	public final static Scanner sc = new Scanner(System.in);
 
 	Person(String name, Double money, String phone, String email) {
 		this.name = name;
 		this.money = money;
 		this.phone = phone;
 		this.email = email;
+	}
+
+	public void addPerson() {
+
+		System.out.println("Vvedite Name:");
+		name = sc.next();
+		System.out.println("phone:");
+		phone = sc.next();
+		System.out.println("money (type double):");
+		money = sc.nextDouble();
+		System.out.println("email:");
+		email = sc.next();
+		
+		System.out.println(" Name: " + name + "   money: " + money + "   phone: " + phone + "   email: " + email);
+
 	}
 
 	public String getName() {
