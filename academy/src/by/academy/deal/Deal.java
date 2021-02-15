@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 public class Deal {
 
 	public final static int DEFAULT_PRODUCT_SIZE = 2;
-
+//	d = Math.ceil(d * 100) / 100; // rounding up the invoice
 	private String date;
 	private Person seller;
 	private Person buyer;
@@ -73,6 +73,19 @@ public class Deal {
 		}
 		products[productCounter++] = product;
 	}
+	
+	public void deleteProduct(int index) {
+
+		if (index > products.length || index < 0) {
+			System.out.println("Index of bound");
+			return;
+		}
+		if (productCounter != index) {
+			System.arraycopy(products, index + 1, products, index, products.length - index - productCounter);
+		}
+		products[productCounter] = null;
+		productCounter--;
+	}
 
 	private void expandProductArray() {
 		Product[] tempArray = new Product[products.length * 2 + 1];
@@ -80,32 +93,44 @@ public class Deal {
 		products = tempArray;
 	}
 
-	public Double deal() {
-		Double checkSum = 0.0;
-
-		for (Product tmp : products) {
-			if (tmp != null) {
-
-				double d = tmp.getPrice() * tmp.getQuantity() * tmp.discount();
-
-				if (tmp instanceof Milk) {
-					System.out.print("Milk: ");
-				} else if (tmp instanceof Cheese) {
-					System.out.print("Cheese: ");
-				} else if (tmp instanceof Wine) {
-					System.out.print("Wine: ");
-				}
-
-				d = Math.ceil(d * 100) / 100; // rounding up the invoice
-
-				System.out.println(tmp.getPrice() + " x " + tmp.getQuantity() + " x " + tmp.discount() + " = " + d);
-				checkSum += d;
-			}
+	private void printBill() {
+		double summ = 0;
+		System.out.println("Сделка совершена ");
+		for (Product product : products) {
+			double totalProductPrice = product.getPrice() * product.getQuantity();
+			summ += totalProductPrice;
+			System.out.println("Имя: " + product.getManufacturer() + " " + product.getPrice() + "X"
+					+ product.getQuantity() + "=" + totalProductPrice);
 		}
-		System.out.println("----------------------------");
-		System.out.println("Total price: " + checkSum + "\n");
+		System.out.println("Сумма всей сделки " + summ);
+		buyer.setMoney(buyer.getMoney() - summ);
+		seller.setMoney(seller.getMoney() + summ);
+		System.out.println("Деньги покупателя " + buyer.getMoney());
+		System.out.println("Деньги продавца " + seller.getMoney());
 
-		return checkSum;
+	}
 
+
+	public void printProducts() {
+		for (int i = 0; i < productCounter; i++) {
+			Product p = products[i];
+			System.out.println("Name: " + p.getManufacturer());
+			System.out.println("Type: " + p.getType());
+			System.out.println("Total Price: " + p.calcTotalPrice());
+			System.out.println("-----------------");
+		}
+	}
+
+	
+	public void deal() {
+		double sum = 0;
+		for (Product product : products) {
+			sum =sum+ product.getPrice() * product.getQuantity();
+		}
+		if (sum > buyer.getMoney()) {
+			System.out.println("Недостаточно средств! ");
+		} else {
+			printBill();
+		}
 	}
 }
