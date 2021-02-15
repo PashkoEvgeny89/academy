@@ -7,7 +7,7 @@ public class Person {
 	private String phone;
 	private String email;
 	private Double money;
-	public final static Scanner sc = new Scanner(System.in);
+//	public final static Scanner sc = new Scanner(System.in);
 
 	Person(String name, Double money, String phone, String email) {
 		this.name = name;
@@ -16,7 +16,7 @@ public class Person {
 		this.email = email;
 	}
 
-	public void createPerson() {
+/*	public void createPerson() {
 
 		System.out.print("inter Name:");
 		name = sc.next();
@@ -25,11 +25,13 @@ public class Person {
 		System.out.print("inter money (type double):");
 		money = sc.nextDouble();
 		System.out.print("inter email:");
-		email = sc.next();
+		email = sc.next(); 
 		
-	//	System.out.println(" Name: " + name + "   money: " + money + "   phone: " + phone + "   email: " + email);
+		}
+		*/
+		
 
-	}
+	
 
 	public String getName() {
 		return name;
