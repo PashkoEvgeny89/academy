@@ -8,7 +8,6 @@ public abstract class Product {
 	protected double price;
 	protected String manufacturer;
 	protected int quantity;
-	public final static Scanner sc = new Scanner(System.in);
 
 	Product(String type, double price, String manufacturer, int quantity) {
 		this.type = type;
@@ -16,18 +15,6 @@ public abstract class Product {
 		this.manufacturer = manufacturer;
 		this.quantity = quantity;
 	}
-	
-	public void createProduct() {
-
-		System.out.print("inter type:");
-		type = sc.next();
-		System.out.print("inter manufacturer:");
-		manufacturer = sc.next();
-		System.out.print("inter price (type double):");
-		price = sc.nextDouble();
-		System.out.print("inter quantity:");
-		quantity = sc.nextInt();
-		}
 
 	public abstract double discount();
 
