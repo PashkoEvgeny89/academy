@@ -92,8 +92,18 @@ public class Deal {
 		System.arraycopy(products, 0, tempArray, 0, products.length);
 		products = tempArray;
 	}
+	
+	public void printProducts() {
+		for (int i = 0; i < productCounter; i++) {
+			Product p = products[i];
+			System.out.println("Type: " + p.getType());
+			System.out.println("Name: " + p.getManufacturer());
+			System.out.println("Total Price: " + p.calcTotalPrice());
+			System.out.println("-----------------");
+		}
+	}
 
-	private void printBill() {
+	public void printBill() {
 		double summ = 0;
 		System.out.println("Сделка совершена ");
 		for (Product product : products) {
@@ -109,18 +119,6 @@ public class Deal {
 		System.out.println("Деньги продавца " + seller.getMoney());
 
 	}
-
-
-	public void printProducts() {
-		for (int i = 0; i < productCounter; i++) {
-			Product p = products[i];
-			System.out.println("Name: " + p.getManufacturer());
-			System.out.println("Type: " + p.getType());
-			System.out.println("Total Price: " + p.calcTotalPrice());
-			System.out.println("-----------------");
-		}
-	}
-
 	
 	public void deal() {
 		double sum = 0;
