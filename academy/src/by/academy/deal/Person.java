@@ -16,18 +16,18 @@ public class Person {
 		this.email = email;
 	}
 
-	public void addPerson() {
+	public void createPerson() {
 
-		System.out.println("Vvedite Name:");
+		System.out.print("inter Name:");
 		name = sc.next();
-		System.out.println("phone:");
+		System.out.print("inter phone:");
 		phone = sc.next();
-		System.out.println("money (type double):");
+		System.out.print("inter money (type double):");
 		money = sc.nextDouble();
-		System.out.println("email:");
+		System.out.print("inter email:");
 		email = sc.next();
 		
-		System.out.println(" Name: " + name + "   money: " + money + "   phone: " + phone + "   email: " + email);
+	//	System.out.println(" Name: " + name + "   money: " + money + "   phone: " + phone + "   email: " + email);
 
 	}
 
