@@ -1,7 +1,5 @@
 package by.academy.deal;
 
-import java.util.Scanner;
-
 public abstract class Product {
 
 	protected String type;
