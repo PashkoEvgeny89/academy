@@ -3,7 +3,7 @@ package by.academy.deal;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Deal {
+public class Deal implements Dealinterface {
 
 	public final static int DEFAULT_PRODUCT_SIZE = 2;
 
@@ -72,6 +72,7 @@ public class Deal {
 		System.out.println("Deadline date: " + calendar.getTime());
 	}
 
+	@Override
 	public void addProduct(Product product) {
 
 		if (products == null) {
@@ -84,6 +85,7 @@ public class Deal {
 		products[productCounter++] = product;  //	System.out.println("The grocery basket is empty");
 	}
 
+	@Override
 	public void deleteProduct(String type) {
 		if (productCounter == 0) {
 			System.out.println("Product list is empty");
@@ -131,6 +133,7 @@ public class Deal {
 		}
 	}
 
+	@Override
 	public void printBill() { 
 		System.out.println();
 		for (int i = 0; i < productCounter; i++) {
