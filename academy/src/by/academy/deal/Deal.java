@@ -14,6 +14,7 @@ public class Deal {
 	private int productCounter;
 	private Double checkSum = 0.0;
 
+
 	public Deal() {
 		super();
 	}
@@ -31,12 +32,6 @@ public class Deal {
 		this.date = date;
 		this.seller = seller;
 		this.buyer = buyer;
-	}
-
-	public void deadline() {
-		Calendar calendar = new GregorianCalendar();
-		calendar.add(Calendar.DAY_OF_MONTH, 10);
-		System.out.println("Deadline date: " + calendar.getTime());
 	}
 
 	public String getDate() {
@@ -70,6 +65,12 @@ public class Deal {
 	public void setProducts(Product[] products) {
 		this.products = products;
 	}
+	
+	public void deadline() {
+		Calendar calendar = new GregorianCalendar();
+		calendar.add(Calendar.DAY_OF_MONTH, 10);
+		System.out.println("Deadline date: " + calendar.getTime());
+	}
 
 	public void addProduct(Product product) {
 
@@ -80,72 +81,80 @@ public class Deal {
 				expandProductArray();
 			}
 		}
-		products[productCounter++] = product;
+		products[productCounter++] = product;  //	System.out.println("The grocery basket is empty");
 	}
-	
-	 public void deleteProduct(String name) {
-		if (products.length == 0) {
+
+	public void deleteProduct(String type) {
+		if (productCounter == 0) {
 			System.out.println("Product list is empty");
 			return;
 		}
-		for (int i = 0; i < products.length; i++) {
-			if (products[i].getType().equals(name)) {
-				Product temp = products[products.length - 1];
-				products[products.length - 1] = products[i];
+		for (int i = 0; i < productCounter; i++) {
+			if (products[i].getType().equals(type)) {
+				Product temp = products[productCounter - 1];
+				products[productCounter - 1] = products[i];
 				products[i] = temp;
+				productCounter--;
 				break;
 			}
 		}
 	}
-
+	
+	public void deleteProduct(int index) {
+		if (index > products.length || index < 0) {
+			System.out.println("Index of bound");
+			return;
+		}
+		if (productCounter != index) {
+			System.arraycopy(products, index + 1, products, index, products.length - index - productCounter);
+		}
+		products[productCounter] = null;
+		productCounter--;
+	}
+	
 	private void expandProductArray() {
 		Product[] tempArray = new Product[products.length * 2 + 1];
 		System.arraycopy(products, 0, tempArray, 0, products.length);
 		products = tempArray;
 	}
-
-	public void printProducts() {
+	
+	public void printProducts() { 
+		System.out.println("\nProducts in the grocery basket:\n**********************************");
 		for (int i = 0; i < productCounter; i++) {
 			Product p = products[i];
 			System.out.println("Type: " + p.getType());
-			System.out.println("Name: " + p.getManufacturer());
-			System.out.println("Total Price: " + Math.ceil((p.calcTotalPrice()) * 100) / 100);
-			System.out.println("-----------------");
+			System.out.println("Manufacturer: " + p.getManufacturer());
+			System.out.println("Quantity: " + p.getQuantity());
+			System.out.println("Price for 1 pc: " + p.getPrice());
+			System.out.println("Total price with discount: " + p.calcTotalPrice());
+			System.out.println("**********************************");
 		}
 	}
 
-	public void deal() {
-		if (getCheckSum() > buyer.getMoney()) {
-			System.out.println("Insufficient money");
-		} else {
-			System.out.println("Buyer "+buyer.getName()+" money: "+ (buyer.getMoney() - getCheckSum()));
-			System.out.println("Seller "+seller.getName()+" money: "+ (seller.getMoney() + getCheckSum())+"\n");
-		}
-
-	}
-	
-	public Double printBill() {
-		for (Product tmp : products) {
-			if (tmp != null) {
-
-				double d = tmp.getPrice() * tmp.getQuantity() * tmp.discount();
-
-				if (tmp instanceof Milk) {
-					System.out.print("Milk: ");
-				} else if (tmp instanceof Cheese) {
-					System.out.print("Cheese: ");
-				} else if (tmp instanceof Wine) {
-					System.out.print("Wine: ");
-				}
+	public void printBill() { 
+		System.out.println();
+		for (int i = 0; i < productCounter; i++) {
+			Product p = products[i]; 
+			if (p != null) {
+				double d = p.getPrice() * p.getQuantity() * p.discount();
 				d = Math.ceil(d * 100) / 100; // rounding up the invoice
-
-				System.out.println(tmp.getPrice() + " x " + tmp.getQuantity() + " x " + tmp.discount() + " = " + d);
-				checkSum += d;
+				System.out.println(p.getType()+": " +p.getPrice() + " x " + p.getQuantity() + " x " + p.discount() + " = " + d);
+				checkSum = checkSum + d;
 			}
 		}
-		System.out.println("-----------------------------");
-		System.out.println("Total price: " + checkSum+"\n");
-		return checkSum;
+		System.out.println("**********************************");
+		System.out.println("Total price wiht discount: " + checkSum + "\n");
+		
 	}
-
+	
+public void deal() {
+		
+		if (getCheckSum() > buyer.getMoney()) {
+			System.out.println("Insufficient money\n");
+		} else {
+			System.out.println("The results of the transaction");
+			System.out.println("Buyer " + buyer.getName() + " money: " + (buyer.getMoney() - checkSum));
+			System.out.println("Seller " + seller.getName() + " money: " + (seller.getMoney() + checkSum+"\n"));
+		}
+	}
 }

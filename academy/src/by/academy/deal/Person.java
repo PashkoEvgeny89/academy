@@ -1,33 +1,29 @@
 package by.academy.deal;
 
 public class Person {
-	private String name;
-	private String phone;
-	private String email;
-	private Double money;
-//	public final static Scanner sc = new Scanner(System.in);
-
-	Person(String name, Double money, String phone, String email) {
+	String name;
+	String phone;
+	String email;
+	Double money;
+	String dayOfBirth;
+	
+	Person(String name, Double money, String phone, String email, String dayOfBirth) {
+		
 		this.name = name;
 		this.money = money;
 		this.phone = phone;
 		this.email = email;
+		this.dayOfBirth=dayOfBirth;
 	}
 
-/*	public void createPerson() {
+	public String getDayOfBirth() {
+		return dayOfBirth;
+	}
 
-		System.out.print("inter Name:");
-		name = sc.next();
-		System.out.print("inter phone:");
-		phone = sc.next();
-		System.out.print("inter money (type double):");
-		money = sc.nextDouble();
-		System.out.print("inter email:");
-		email = sc.next(); 
-		
-		}
-		*/
-		
+	public void setDayOfBirth(String dayOfBirth) {
+		this.dayOfBirth = dayOfBirth;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -62,6 +58,7 @@ public class Person {
 
 	Person() {
 		super();
+		
 	}
 
 }
