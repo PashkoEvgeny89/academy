@@ -82,18 +82,20 @@ public class Deal {
 		}
 		products[productCounter++] = product;
 	}
-
-	public void deleteProduct(int index) {
-
-		if (index > products.length || index < 0) {
-			System.out.println("Index of bound");
+	
+	 public void deleteProduct(String name) {
+		if (products.length == 0) {
+			System.out.println("Product list is empty");
 			return;
 		}
-		if (productCounter != index) {
-			System.arraycopy(products, index + 1, products, index, products.length - index - productCounter);
+		for (int i = 0; i < products.length; i++) {
+			if (products[i].getType().equals(name)) {
+				Product temp = products[products.length - 1];
+				products[products.length - 1] = products[i];
+				products[i] = temp;
+				break;
+			}
 		}
-		products[productCounter] = null;
-		productCounter--;
 	}
 
 	private void expandProductArray() {
@@ -112,6 +114,16 @@ public class Deal {
 		}
 	}
 
+	public void deal() {
+		if (getCheckSum() > buyer.getMoney()) {
+			System.out.println("Insufficient money");
+		} else {
+			System.out.println("Buyer "+buyer.getName()+" money: "+ (buyer.getMoney() - getCheckSum()));
+			System.out.println("Seller "+seller.getName()+" money: "+ (seller.getMoney() + getCheckSum())+"\n");
+		}
+
+	}
+	
 	public Double printBill() {
 		for (Product tmp : products) {
 			if (tmp != null) {
@@ -132,18 +144,8 @@ public class Deal {
 			}
 		}
 		System.out.println("-----------------------------");
-		System.out.println("Total price: " + checkSum);
+		System.out.println("Total price: " + checkSum+"\n");
 		return checkSum;
-	}
-
-	public void deal() {
-		if (getCheckSum() > buyer.getMoney()) {
-			System.out.println("Insufficient money");
-		} else {
-			System.out.println("Buyer "+buyer.getName()+" money: "+ (buyer.getMoney() - getCheckSum()));
-			System.out.println("Seller "+seller.getName()+" money: "+ (seller.getMoney() + getCheckSum()));
-		}
-
 	}
 
 }

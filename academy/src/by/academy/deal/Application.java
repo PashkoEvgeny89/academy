@@ -22,23 +22,23 @@ public class Application {
 		deal.addProduct(new Wine("Wine", 24.5, "Sacebeli", 7, "Georgia"));
 		deal.addProduct(new Milk("Milk", 1.7, "Prostokvashino", 21, 1.5));
 		
-	//	deal.deleteProduct(1);
+		deal.deleteProduct("Wine");
 
-	//	deal.deal();
+		deal.deal();
 	
-		deal.printProducts();
+	//	deal.printProducts();
 		
 		deal.printBill();
-	//	deal.deadline(); // Task 7
+		deal.deadline(); // Task 7
 		
-	//	RegExpDate red=new RegExpDate();  //Task 3, Task 4
-	//	red.regExpDate(deal.getDate());
-	//
-	//	BelarusPhoneValidator phone=new BelarusPhoneValidator();  //Task 5, Task 9
-	//	System.out.println("\n"+phone.validate(deal.getBuyer().getPhone()));
+		RegExpDate red=new RegExpDate();  //Task 3, Task 4
+		red.regExpDate(deal.getDate());
+	
+		BelarusPhoneValidator phone=new BelarusPhoneValidator();  //Task 5, Task 9
+		System.out.println("\n"+phone.validate(deal.getBuyer().getPhone()));
 		
-	//	EmailValidator email=new EmailValidator();
-	//	System.out.println(email.validate(deal.getSeller().getEmail()));
+		EmailValidator email=new EmailValidator();
+		System.out.println(email.validate(deal.getSeller().getEmail()));
 		
 	}
 }
