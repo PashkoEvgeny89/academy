@@ -29,9 +29,9 @@ public class Application {
 
 			deal.deadline(); // Task 7
 
-			RegExpDate regExp = new RegExpDate(); // Task 3, Task 4
+			RegExpDate regExp = new RegExpDate(); // Task 3, Task 4, Task 6
 			regExp.regExpDate(deal.getDate());
-		//	regExp.regExpDate(deal.getSeller().getDayOfBirth());
+		
 
 			BelarusPhoneValidator phone = new BelarusPhoneValidator(); // Task 5, Task 9
 			System.out.println("\nValidate for phone: " + phone.validate(deal.getBuyer().getPhone()));
