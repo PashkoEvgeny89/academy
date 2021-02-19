@@ -39,7 +39,7 @@ public class Task6<T,V,K extends Number> {
 		}
 		
 		public void name() {
-			System.out.println(t.toString().getClass().getName());
+			System.out.println(t.getClass().getName());
 			System.out.println(v.getClass().getName());
 			System.out.println(k.getClass().getName());
 		}
