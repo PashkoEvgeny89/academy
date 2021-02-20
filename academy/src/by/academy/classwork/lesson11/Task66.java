@@ -3,7 +3,8 @@ package by.academy.classwork.lesson11;
 public class Task66 {
 
 	public static void main(String[] args) {
-		Task6<Integer, Double, Long> var = new Task6<>(2, 2.2, 6l);
+		Animal cat=new Animal();
+		Task6<String, Animal, Integer> var = new Task6<>("qwerty", cat , 6);
 		var.name();
 		System.out.println();
 	}
