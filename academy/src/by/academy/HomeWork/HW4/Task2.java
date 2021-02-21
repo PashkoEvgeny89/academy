@@ -24,6 +24,23 @@ public class Task2<T extends Object> {
 		this.tArray = tArray;
 	}
 	
+	private void growthAarray() {
+		capasity
+	}
 	
-    }
+	public void add(<T> t) {
+		if (int i=0; i<=tArray.length; i++) {
+			if ((tArray.length-1)!=null) {
+				
+			}
+			if (tArray[i]==null) {
+				tArray[i]=t;
+			}
+		}
+	}
+	
+	
+		
+	}
+	
 

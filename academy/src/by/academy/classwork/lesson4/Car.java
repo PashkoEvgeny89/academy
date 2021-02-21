@@ -2,7 +2,7 @@ package by.academy.classwork.lesson4;
 
 public class Car {
 
-	private int speed;
+	int speed;
 	final static int Q=10;
 
 	public int getSpeed() {
