@@ -11,6 +11,7 @@ public class ArrayApp {
 		System.out.println(list);
 		
 		list.add(3);
+		list.add(4);
 		
 		System.out.println(list.size());
 		
