@@ -26,7 +26,6 @@ public class Method81<T extends Object> {
 	}
 
 	// 1.1 добавление элемента массива в конец (или в первое свободное место)
-	
 	@SuppressWarnings("unchecked")
 	public void addElementToLast(Object value) {
 		growArray();
@@ -90,7 +89,7 @@ public class Method81<T extends Object> {
 		return getLastFullIndex() + 1;
 	}
 
-	// 6 вывод индекса последнего заполненного элемента 
+	// 6 вывод индекса последнего заполненного элемента
 	public int getLastFullIndex() {
 		int lastFullIndex = 0;
 		for (int i = arr.length - 1; i >= 0; i--) {
