@@ -1,4 +1,4 @@
-package by.academy.HomeWork.HW4.Task1;
+package by.academy.HomeWork.HW4.Test;
 
 public class DateTest {
 
