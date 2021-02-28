@@ -9,7 +9,7 @@ public class AppIteratorArray2 {
 		IteratorArray2<Integer> iterator = new IteratorArray2<>(array);
 
 		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
+			System.out.print(iterator.next()+" ");
 		}
 	}
 }
