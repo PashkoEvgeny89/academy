@@ -2,7 +2,7 @@ package by.academy.HomeWork.HW4.Task2;
 
 public class Method81<T extends Object> {
 	private T[] arr;
-	private int counter=0;
+	private int counter = 0;
 
 	@SuppressWarnings("unchecked")
 	public Method81() {
@@ -38,9 +38,9 @@ public class Method81<T extends Object> {
 	@SuppressWarnings("unchecked")
 	public void addElementToFirst(Object value) {
 		growArray();
-		for (int i = counter-1; i >= 0; i--) {
-				arr[i + 1] = arr[i];
-			}
+		for (int i = counter - 1; i >= 0; i--) {
+			arr[i + 1] = arr[i];
+		}
 		arr[0] = (T) value;
 		counter++;
 	}
@@ -51,7 +51,7 @@ public class Method81<T extends Object> {
 		growArray();
 		if (index <= counter) {
 			for (int i = counter; i >= index; i--) {
-					arr[i + 1] = arr[i];
+				arr[i + 1] = arr[i];
 			}
 			arr[index] = (T) value;
 			counter++;
@@ -66,12 +66,12 @@ public class Method81<T extends Object> {
 		if (index < counter) {
 			return arr[index];
 		} else
-			return (T) ("Index " + index + " out of bounds for array size! Max Index " + (counter-1));
+			return (T) ("Index " + index + " out of bounds for array size! Max Index " + (counter - 1));
 	}
 
 	// 3 взятие последнего элемента
 	public T getLastElement() {
-		return arr[counter-1];
+		return arr[counter - 1];
 	}
 
 	// 4 взятие первого элемента
@@ -86,19 +86,19 @@ public class Method81<T extends Object> {
 
 	// 6 вывод индекса последнего заполненного элемента
 	public int getLastFullIndex() {
-		return counter-1;
+		return counter - 1;
 	}
 
 	// 7 удаление элемента по индексу
 	public void removeElementByIndex(int index) {
 		if (index < counter) {
-			for (int i = index; i < counter-1; i++) {
+			for (int i = index; i < counter - 1; i++) {
 				arr[i] = arr[i + 1];
 			}
-			arr[counter-1] = null;
+			arr[counter - 1] = null;
 			counter--;
 		} else
-			System.out.println("Index " + index + " out of bounds for array size! Max Index " + (counter-1));
+			System.out.println("Index " + index + " out of bounds for array size! Max Index " + (counter - 1));
 	}
 
 	// 8 удаление элемента по значению
@@ -108,10 +108,10 @@ public class Method81<T extends Object> {
 			while (arr[i].equals(value)) {
 				removeIndex = i;
 				i--;
-				for (int q = removeIndex; q < counter-1; q++) {
+				for (int q = removeIndex; q < counter - 1; q++) {
 					arr[q] = arr[q + 1];
 				}
-				arr[counter-1] = null;
+				arr[counter - 1] = null;
 				counter--;
 				break;
 			}
@@ -122,15 +122,15 @@ public class Method81<T extends Object> {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Values on array: ");
-		if (counter==0) {
+		if (counter == 0) {
 			builder.append("array empty");
 		} else {
-		for (int i = 0; i < counter; i++) {
-			builder.append(arr[i]);
-			if (i < counter-1) {
-				builder.append(", ");
+			for (int i = 0; i < counter; i++) {
+				builder.append(arr[i]);
+				if (i < counter - 1) {
+					builder.append(", ");
+				}
 			}
-		}
 		}
 		return builder.toString();
 	}
@@ -144,6 +144,5 @@ public class Method81<T extends Object> {
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
-
 
 }

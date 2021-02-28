@@ -8,7 +8,7 @@ public class AppMethod81notCounter {
 		System.out.println(box.toString());
 
 		Cat cat = new Cat();
-
+		box.addElementToLast(null);
 		box.addElementToLast('X');
 		box.addElementToLast(3.14);
 		System.out.println(box.toString());
@@ -16,7 +16,7 @@ public class AppMethod81notCounter {
 		box.addElementToFirst(cat);
 		System.out.println(box.toString());
 		
-		box.addElementByIndex(4, "String");
+		box.addElementByIndex(0, null);
 		box.addElementByIndex(0, 777);
 		System.out.println(box.toString());
 
