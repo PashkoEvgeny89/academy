@@ -1,70 +1,100 @@
 package by.academy.HomeWork.HW4.Task1;
 
-import java.time.LocalDate;
+	import java.time.LocalDate;
+	import java.time.temporal.ChronoUnit;
 
+	public class Date {
+	    private Year year;
+	    private Month month;
+	    private Day day;
+	    private final DateValidator dv = new DateValidator();
 
+	    public Date() {
+	        super();
+	    }
 
-public class Date {
-	
-	//LocalDate
-	
-	//Calendar calendar = new GregorianCalendar(2017, 0 , 25);
-	
-	private Date date;  //dd-mm-yyyy
-	
-	/* 
-	Создать объект класса Date, используя вложенные классы Год, Месяц, День. 
-Методы: задать дату, вывести на консоль день недели по заданной дате. 
-День недели представить в виде перечисления. Пишем свой ином
+	    public Date(String date) {
+	        super();
+	        validateDate(date);
+	    }
 
-Один из конструкторов - строка в формате dd-mm-yyyy, добавить валидацию для этой строки. 
-После валидации в конструкторе создаем объекты класса Year, Month, Day.
+	    public void setDate(String date) {
+	        validateDate(date);
+	    }
 
+	    private void validateDate(String date) {
+	        if (dv.validate(date)) {
+	            this.year = new Year(Integer.parseInt(date.substring(6, 10)));
+	            this.month = new Month(Integer.parseInt(date.substring(3, 5)));
+	            this.day = new Day(Integer.parseInt(date.substring(0, 2)));
+	        } else {
+	            System.out.println("Введите корректную дату придерживаясь формата : \"dd-mm-yyyy\"");
+	        }
+	    }
 
-	
-	
-	 
+	    public DayOfWeek getDayOfWeek() {
+	        LocalDate ld = LocalDate.of(getYear(), getMonth(), getDay());
+	        return DayOfWeek.fromValue(ld.getDayOfWeek().getValue());
+	    }
 
-	if Validate true ->
-	Year  parse (4 dig)
-	Month  parse (2 big)
-	Day   parse (2 dig)     */
-	
-	
-	public Date getDate() {
-		return date;
+	    public long getDaysBetweenTwoDates(Date date) {
+	        LocalDate ld1 = LocalDate.of(getYear(), getMonth(), getDay());
+	        LocalDate ld2 = LocalDate.of(date.getYear(), date.getMonth(), date.getDay());
+	        return Math.abs(ChronoUnit.DAYS.between(ld1, ld2));
+	    }
+
+	    public boolean isLeapYear() {
+	        if (getYear() % 4 == 0) {
+	            return getYear() % 400 == 0 || getYear() % 100 != 0;
+	        }
+	        return false;
+	    }
+
+	    public int getYear() {
+	        return year.getYear();
+	    }
+
+	    public int getMonth() {
+	        return month.getMonth();
+	    }
+
+	    public int getDay() {
+	        return day.getDay();
+	    }
+
+	    private static class Year {
+	        private final int year;
+
+	        Year(int year) {
+	            this.year = year;
+	        }
+
+	        public int getYear() {
+	            return year;
+	        }
+	    }
+
+	    private static class Month {
+	        private final int month;
+
+	        private Month(int month) {
+	            this.month = month;
+	        }
+
+	        public int getMonth() {
+	            return month;
+	        }
+	    }
+
+	    private static class Day {
+	        private final int day;
+
+	        private Day(int day) {
+	            this.day = day;
+	        }
+
+	        private int getDay() {
+	            return day;
+	        }
+	    }
 	}
-
-	
-	public void setDate1(Date date) {
-		this.date = date;
-	}
-	
-	public void printDate(Date date) {
-		System.out.println("Day of week=");
-		
-	}
-	
-	
-	
-		//Calendar calendar = new GregorianCalendar(new Date);
-		
-	
-
-		
-	
-	
-		
-	//int getDayOfYear();         ���������� ����� ��� � ������ ����
-
-		
-	
-	//	calendar.set(Calendar.YEAR, 2017); 			class Year parse date YEAR
-	//	calendar.set(Calendar.MONTH, 0);			class Month parse date MONTH
-	//	calendar.set(Calendar.DAY_OF_MONTH, 25);	class Day parse date DAY_OF_MONTH
-		
-		
-	
-	
-	
-}
