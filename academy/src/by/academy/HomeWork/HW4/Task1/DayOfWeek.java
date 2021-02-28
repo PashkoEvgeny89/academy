@@ -1,15 +1,14 @@
 package by.academy.HomeWork.HW4.Task1;
 
-	public enum DayOfWeek {
-	    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+public enum DayOfWeek {
+	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
 
-	    public static DayOfWeek fromValue(int value) {
-	        for (DayOfWeek day : DayOfWeek.values()) {
-	            if (day.ordinal() == value - 1) {
-	                return day;
-	            }
-	        }
-	        throw new RuntimeException("Unknown value" + value);
-	    }
+	public static DayOfWeek fromValue(int value) {
+		for (DayOfWeek day : DayOfWeek.values()) {
+			if (day.ordinal() == value - 1) {
+				return day;
+			}
+		}
+		throw new RuntimeException("Unknown value" + value);
 	}
-
+}

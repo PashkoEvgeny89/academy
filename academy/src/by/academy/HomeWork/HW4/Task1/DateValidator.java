@@ -1,13 +1,16 @@
 package by.academy.HomeWork.HW4.Task1;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DateValidator {
+public class DateValidator implements Validator {
 
-	    private static final Pattern pattern = Pattern.compile("(0[1-9]|[12][0-9]|3[01])[-]" +
-	            "(0[1-9]|1[0-2])[-](1[0-9]{3}|20[01][0-9]|202[01])");
+	private static final Pattern PATTERN = Pattern
+			.compile("((([0-2]\\d)|(30)|(31))\\-((0\\d)|(1[0-2]))\\-((19|20)\\d\\d))");
 
-	    public boolean validate(String strDate) {
-	        return pattern.matcher(strDate.trim()).matches();
-	    }
+	@Override
+	public boolean validate(String strDate) {
+		Matcher matcher = PATTERN.matcher(strDate);
+		return matcher.matches();
 	}
+}
