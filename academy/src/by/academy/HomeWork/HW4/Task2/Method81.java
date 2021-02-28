@@ -2,6 +2,7 @@ package by.academy.HomeWork.HW4.Task2;
 
 public class Method81<T extends Object> {
 	private T[] arr;
+	private int counter=0;
 
 	@SuppressWarnings("unchecked")
 	public Method81() {
@@ -25,58 +26,52 @@ public class Method81<T extends Object> {
 		}
 	}
 
-	// 1.1 добавление элемента массива в конец (или в первое свободное место)
+	// 1.1 добавление элемента массива в конец
 	@SuppressWarnings("unchecked")
 	public void addElementToLast(Object value) {
 		growArray();
-		for (int i = 0; i <= arr.length; i++) {
-			if (arr[i] == null) {
-				arr[i] = (T) value;
-				break;
-			}
-		}
+		arr[counter] = (T) value;
+		counter++;
 	}
 
 	// 1.2 добавление элемента массива в начало
 	@SuppressWarnings("unchecked")
 	public void addElementToFirst(Object value) {
 		growArray();
-		for (int i = arr.length - 2; i >= 0; i--) {
-			if (arr[i] != null) {
+		for (int i = counter-1; i >= 0; i--) {
 				arr[i + 1] = arr[i];
 			}
-		}
 		arr[0] = (T) value;
+		counter++;
 	}
 
 	// 1.3 добавление элемента массива по индексу
 	@SuppressWarnings("unchecked")
 	public void addElementByIndex(int index, Object value) {
 		growArray();
-		if (index <= size()) {
-			for (int i = size(); i >= index; i--) {
-				if (arr[i] != null) {
+		if (index <= counter) {
+			for (int i = counter; i >= index; i--) {
 					arr[i + 1] = arr[i];
-				}
 			}
 			arr[index] = (T) value;
+			counter++;
 		} else
 			System.out.println(
-					"Element is not added! Index " + index + " out of bounds for array length. Max Index " + size());
+					"Element is not added! Index " + index + " out of bounds for array size. Max Index " + counter);
 	}
 
 	// 2 взятие элемента по индексу
 	@SuppressWarnings("unchecked")
 	public T getElemenByIndex(int index) {
-		if (index < size()) {
+		if (index < counter) {
 			return arr[index];
 		} else
-			return (T) ("Index " + index + " out of bounds for array length! Max Index " + getLastFullIndex());
+			return (T) ("Index " + index + " out of bounds for array size! Max Index " + (counter-1));
 	}
 
-	// 3 взятие последнего элемента (не null)
+	// 3 взятие последнего элемента
 	public T getLastElement() {
-		return arr[getLastFullIndex()];
+		return arr[counter-1];
 	}
 
 	// 4 взятие первого элемента
@@ -86,43 +81,38 @@ public class Method81<T extends Object> {
 
 	// 5 размер массива
 	public int size() {
-		return getLastFullIndex() + 1;
+		return counter;
 	}
 
 	// 6 вывод индекса последнего заполненного элемента
 	public int getLastFullIndex() {
-		int lastFullIndex = 0;
-		for (int i = arr.length - 1; i >= 0; i--) {
-			if (arr[i] != null) {
-				lastFullIndex = i;
-				break;
-			}
-		}
-		return lastFullIndex;
+		return counter-1;
 	}
 
 	// 7 удаление элемента по индексу
 	public void removeElementByIndex(int index) {
-		if (index <= getLastFullIndex()) {
-			for (int i = index; i < getLastFullIndex(); i++) {
+		if (index < counter) {
+			for (int i = index; i < counter-1; i++) {
 				arr[i] = arr[i + 1];
 			}
-			arr[getLastFullIndex()] = null;
+			arr[counter-1] = null;
+			counter--;
 		} else
-			System.out.println("Index " + index + " out of bounds for array length! Max Index " + getLastFullIndex());
+			System.out.println("Index " + index + " out of bounds for array size! Max Index " + (counter-1));
 	}
 
 	// 8 удаление элемента по значению
 	public void removeElementByValue(Object value) {
 		int removeIndex = 0;
-		for (int i = 0; i <= getLastFullIndex(); i++) {
+		for (int i = 0; i < counter; i++) {
 			while (arr[i].equals(value)) {
 				removeIndex = i;
 				i--;
-				for (int q = removeIndex; q < getLastFullIndex(); q++) {
+				for (int q = removeIndex; q < counter-1; q++) {
 					arr[q] = arr[q + 1];
 				}
-				arr[getLastFullIndex()] = null;
+				arr[counter-1] = null;
+				counter--;
 				break;
 			}
 		}
@@ -132,11 +122,15 @@ public class Method81<T extends Object> {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Values on array: ");
-		for (int i = 0; i <= getLastFullIndex(); i++) {
+		if (counter==0) {
+			builder.append("array empty");
+		} else {
+		for (int i = 0; i < counter; i++) {
 			builder.append(arr[i]);
-			if (i < getLastFullIndex()) {
+			if (i < counter-1) {
 				builder.append(", ");
 			}
+		}
 		}
 		return builder.toString();
 	}
@@ -150,4 +144,6 @@ public class Method81<T extends Object> {
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
+
+
 }

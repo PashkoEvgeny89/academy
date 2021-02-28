@@ -1,10 +1,10 @@
 package by.academy.HomeWork.HW4.Task2;
 
-public class AppMethod81 {
+public class AppMethod81notCounter {
 
 	public static <T> void main(String[] args) {
-
-		Method81<T> box = new Method81<>(3);
+		
+		Method81notCounter<T> box = new Method81notCounter<>(3);
 		System.out.println(box.toString());
 
 		Cat cat = new Cat();
@@ -28,13 +28,9 @@ public class AppMethod81 {
 
 		System.out.println(box.getLastFullIndex());
 
-		
-	
 		box.removeElementByIndex(4);
 		box.addElementByIndex(0, cat);
 		System.out.println(box.toString());
-
-	
 
 		box.removeElementByValue(cat);
 		System.out.println(box.toString());
