@@ -8,6 +8,7 @@ public enum DayOfWeek {
 			if (day.ordinal() == value - 1) {
 				return day;
 			}
+			
 		}
 		throw new RuntimeException("Unknown value" + value);
 	}
