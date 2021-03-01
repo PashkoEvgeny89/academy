@@ -17,16 +17,17 @@ public class IteratorArray2<T> implements Iterator<Object> {
 
 	@Override
 	public boolean hasNext() {
+
 		return i < array.length && q < array[i].length;
 	}
 
 	@Override
 	public T next() {
-		T temp = array[i][q++];
+		T value = array[i][q++];
 		if (q >= array[i].length) {
 			i++;
 			q = 0;
 		}
-		return (T) temp;   
+		return value;   
 	}  
 }

@@ -25,10 +25,13 @@ public class IteratorArray<T> implements Iterator<T> {
 	public boolean hasNext() {
 
 		if (i >= array.length || array == null) {
-			i++;
+
 			return false;
 		}
-		if (q >= array[i].length || array[i] == null) {
+		if (q > array[i].length || array[i] == null) {
+			return false;
+		}
+		if (i>=array.length && q==array[i].length) {
 			return false;
 		}
 		return true;
@@ -36,10 +39,16 @@ public class IteratorArray<T> implements Iterator<T> {
 
 	@Override
 	public T next() {
-		if (i < array.length) {
-			return array[i][q++];
-		} else
-			return array[i][q];
-	}
+		T value=array[i][q++];
+		if (q == array[i].length) {
+				i++;
+				q = 0;
+				}
+		
+			return value;
+			
+		
 
+
+	}
 }
