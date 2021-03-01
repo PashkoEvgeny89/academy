@@ -15,7 +15,7 @@ public class IteratorArray2<T> implements Iterator<Object> {
 
 	@Override
 	public boolean hasNext() {
-
+		
 		return i < array.length && q < array[i].length;
 	}
 
