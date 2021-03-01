@@ -13,8 +13,6 @@ public class IteratorArray2<T> implements Iterator<Object> {
 		this.array = array;
 	}
 
-
-
 	@Override
 	public boolean hasNext() {
 
@@ -28,6 +26,6 @@ public class IteratorArray2<T> implements Iterator<Object> {
 			i++;
 			q = 0;
 		}
-		return value;   
-	}  
+		return value;
+	}
 }
