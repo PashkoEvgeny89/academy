@@ -89,7 +89,6 @@ public class Date {
 		LocalDate dateBefore = LocalDate.of(getYear(), getMonth(), getDay());
 		LocalDate dateAfter = LocalDate.of(date.getYear(), date.getMonth(), date.getDay());
 		return Math.abs(ChronoUnit.DAYS.between(dateBefore, dateAfter));
-
 	}
 
 	public boolean isLeapYear() {
