@@ -2,10 +2,12 @@ package by.academy.HomeWork.HW5;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.TreeSet;
 
 public class Task1 {
 
 	public ArrayList<Integer> deleteDuplicate(ArrayList<Integer> list) {
+
 		for (int i = 0; i < list.size(); i++) {
 			for (int q = i + 1; q < list.size(); q++) {
 				if (list.get(i).equals(list.get(q))) {
@@ -15,6 +17,11 @@ public class Task1 {
 			}
 		}
 		return list;
+	}
+
+	public ArrayList<Integer> deleteDuplicateCheater(ArrayList<Integer> list) {
+
+		return new ArrayList<>(new TreeSet<>(list));
 	}
 
 	public static void main(String[] args) {
@@ -30,9 +37,9 @@ public class Task1 {
 
 		Task1 task1 = new Task1();
 
-		task1.deleteDuplicate(list);
+		System.out.println(task1.deleteDuplicate(list));
 
-		System.out.println(list);
+		System.out.println(task1.deleteDuplicateCheater(list));
 
 	}
 }
