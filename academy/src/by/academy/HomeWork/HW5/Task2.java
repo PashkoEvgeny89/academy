@@ -12,7 +12,7 @@ public class Task2 {
 	public void add(List<Integer> list) {
 
 		for (int i = 0; i <= 1_000_00; i++) {
-			list.add(random.nextInt(5));
+			list.add(random.nextInt());
 		}
 	}
 
@@ -20,7 +20,7 @@ public class Task2 {
 
 		long startTime = System.nanoTime();
 		for (int i = 0; i <= 100_00; i++) {
-			list.remove(random.nextInt(5));
+			list.remove(random.nextInt(list.size()));
 		}
 		long finishTime = System.nanoTime();
 		return finishTime - startTime;
@@ -40,7 +40,7 @@ public class Task2 {
 		System.out.println("Time for ArrayList= " + taskArrayList.remove(arrayList));
 		System.out.println("Time for LinkedList= " + taskLinkedList.remove(linkedList));
 		System.out.println("Time difference between ArrayList/LinkedList = "
-				+ taskArrayList.remove(arrayList) / taskLinkedList.remove(linkedList));
+				+ taskLinkedList.remove(linkedList)/taskArrayList.remove(arrayList));
 
 	}
 
