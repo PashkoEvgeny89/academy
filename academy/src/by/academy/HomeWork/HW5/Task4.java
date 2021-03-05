@@ -24,7 +24,7 @@ public class Task4 {
 		}
 		return bestScore;
 	}
-	
+
 	public Integer bestScoreIterator(ArrayList<Integer> list) {
 		Integer bestScore = 0;
 		Iterator<Integer> iterator = list.iterator();

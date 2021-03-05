@@ -40,7 +40,7 @@ public class Task2 {
 		System.out.println("Time for ArrayList= " + taskArrayList.remove(arrayList));
 		System.out.println("Time for LinkedList= " + taskLinkedList.remove(linkedList));
 		System.out.println("Time difference between ArrayList/LinkedList = "
-				+ taskLinkedList.remove(linkedList)/taskArrayList.remove(arrayList));
+				+ taskLinkedList.remove(linkedList) / taskArrayList.remove(arrayList));
 
 	}
 
