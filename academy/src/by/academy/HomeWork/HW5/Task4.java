@@ -1,7 +1,7 @@
 package by.academy.HomeWork.HW5;
 
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import java.util.Random;
 
 public class Task4 {
@@ -24,6 +24,19 @@ public class Task4 {
 		}
 		return bestScore;
 	}
+	
+	public Integer bestScoreIterator(ArrayList<Integer> list) {
+		Integer bestScore = 0;
+		Iterator<Integer> iterator = list.iterator();
+
+		while (iterator.hasNext()) {
+			Integer score = iterator.next();
+			if (score > bestScore) {
+				bestScore = score;
+			}
+		}
+		return bestScore;
+	}
 
 	public static void main(String[] args) {
 
@@ -34,6 +47,7 @@ public class Task4 {
 		System.out.println(list);
 
 		System.out.println(task4.bestScore(list));
+		System.out.println(task4.bestScoreIterator(list));
 
 	}
 
