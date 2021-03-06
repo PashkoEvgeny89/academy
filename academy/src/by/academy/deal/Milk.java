@@ -26,6 +26,7 @@ public class Milk extends Product {
 		if (quantity > 20) {
 			return 0.9;
 		} else {
+			
 			return 1.0;
 		}
 	}
