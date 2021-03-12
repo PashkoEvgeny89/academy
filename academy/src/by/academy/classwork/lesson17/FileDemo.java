@@ -6,12 +6,12 @@ public class FileDemo {
 
 		public static void main(String[] args) {
 
-			File file = new File("src/1/2");
+			File file = new File("src/by/academy/classwork/lesson17");
 
 			if (!file.exists()) {
 				file.mkdirs();
 			}
-			System.out.println(file.isAbsolute());
+		//	System.out.println(file.isAbsolute());
 
 			for (File f : file.listFiles()) {
 				System.out.println("Имя файла: " + f.getName());
