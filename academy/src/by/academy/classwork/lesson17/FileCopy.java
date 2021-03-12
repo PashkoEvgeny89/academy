@@ -8,7 +8,7 @@ import java.io.IOException;
 public class FileCopy {
 
 	public static final String INPUT_FILE_PATH = "src\\by\\academy\\classwork\\lesson17\\file17.txt";
-	public static final String OUTPUT_FILE_PATH = "src\\io\\copied_file.txt";
+	public static final String OUTPUT_FILE_PATH = "src\\by\\academy\\classwork\\lesson17\\file17copy.txt";
 
 	public static void main(String[] args) throws IOException {
 		File dir = new File("src/by/academy/classwork/lesson17");
@@ -22,10 +22,10 @@ public class FileCopy {
 			inputFile.createNewFile();
 		}
 
-//		File outputFile = new File(OUTPUT_FILE_PATH);
-//		if (!outputFile.exists()) {
-//			outputFile.createNewFile();
-//		}
+		File outputFile = new File(OUTPUT_FILE_PATH);
+		if (!outputFile.exists()) {
+			outputFile.createNewFile();
+		}
 //
 //		try (FileInputStream fileIn = new FileInputStream(inputFile);
 //				FileOutputStream fileOut = new FileOutputStream(outputFile)) {
