@@ -34,6 +34,9 @@ public class FileCopy {
 				if (a==63) {
 					a=33;
 				}
+				if (a==32) {
+					a=33;
+				}
 				fileOut.write(a);
 			}
 		}
