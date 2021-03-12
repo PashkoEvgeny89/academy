@@ -26,13 +26,16 @@ public class FileCopy {
 		if (!outputFile.exists()) {
 			outputFile.createNewFile();
 		}
-//
-//		try (FileInputStream fileIn = new FileInputStream(inputFile);
-//				FileOutputStream fileOut = new FileOutputStream(outputFile)) {
-//			int a;
-//			while ((a = fileIn.read()) != -1) {
-//				fileOut.write(a);
-//			}
-//		}
+
+		try (FileInputStream fileIn = new FileInputStream(inputFile);
+				FileOutputStream fileOut = new FileOutputStream(outputFile)) {
+			int a;
+			while ((a = fileIn.read()) != -1) {
+				if (a==63) {
+					a=33;
+				}
+				fileOut.write(a);
+			}
+		}
 	}
 }
