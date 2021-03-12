@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class FileCopy {
 
-	public static final String INPUT_FILE_PATH = "src\\by\\academy\\classwork\\lesson17\\file.txt";
+	public static final String INPUT_FILE_PATH = "src\\by\\academy\\classwork\\lesson17\\file17.txt";
 	public static final String OUTPUT_FILE_PATH = "src\\io\\copied_file.txt";
 
 	public static void main(String[] args) throws IOException {
