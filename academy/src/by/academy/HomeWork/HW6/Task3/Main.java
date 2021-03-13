@@ -12,7 +12,7 @@ public class Main {
 		list.add(new User("name4", "surename4", 99));
 		list.add(new User("name5", "surename5", 53));
 		list.add(new User("name6", "surename6", 35));
-		list.add(new User("name7", "surename7", 2));
+		list.add(new User("name7", "surename7", 29));
 		list.add(new User("name8", "surename8", 40));
 		list.add(new User("name9", "surename9", 31));
 		list.add(new User("name10", "surename10", 23));
