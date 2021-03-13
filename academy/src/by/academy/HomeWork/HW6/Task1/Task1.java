@@ -1,4 +1,4 @@
-package by.academy.HomeWork.HW6;
+package by.academy.HomeWork.HW6.Task1;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
