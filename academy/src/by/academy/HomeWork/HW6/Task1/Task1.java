@@ -8,11 +8,11 @@ public class Task1 {
 
 		public static void main(String[] args) {
 			try (BufferedWriter bufferedWriter = new BufferedWriter(
-					new FileWriter("src\\by\\academy\\HomeWork\\HW6\\fileTask1.txt"))) {
+					new FileWriter("src\\by\\academy\\HomeWork\\HW6\\Task1\\fileTask1.txt"))) {
 				
 				
 				
-				String text = "stop";
+				String text = "stop1";
 				// писать код
 				
 				
