@@ -1,8 +1,7 @@
 package by.academy.HomeWork.HW6.Task3;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+
 import java.io.IOException;
 
 public class Task3 {
