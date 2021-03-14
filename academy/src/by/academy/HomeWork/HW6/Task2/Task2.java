@@ -10,17 +10,11 @@ public class Task2 {
 	public static final String INPUT_FILE_PATH = "src\\by\\academy\\HomeWork\\HW6\\Task2\\fileTask2.txt";
 	public static final String OUTPUT_FILE_PATH = "src\\by\\academy\\HomeWork\\HW6\\Task2\\result.txt";
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 
-		File inputFile = new File(INPUT_FILE_PATH);
+		try (FileInputStream fileIn = new FileInputStream(new File(INPUT_FILE_PATH));
+				FileOutputStream fileOut = new FileOutputStream(new File(OUTPUT_FILE_PATH))) {
 
-		File outputFile = new File(OUTPUT_FILE_PATH);
-		if (!outputFile.exists()) {
-			outputFile.createNewFile();
-		}
-
-		try (FileInputStream fileIn = new FileInputStream(inputFile);
-				FileOutputStream fileOut = new FileOutputStream(outputFile)) {
 			int a;
 			while ((a = fileIn.read()) != -1) {
 
@@ -28,6 +22,8 @@ public class Task2 {
 					fileOut.write(a);
 				}
 			}
+		} catch (IOException message) {
+			message.getStackTrace();
 		}
 	}
 }
