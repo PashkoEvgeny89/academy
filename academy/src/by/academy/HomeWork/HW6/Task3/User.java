@@ -1,12 +1,16 @@
 package by.academy.HomeWork.HW6.Task3;
 
-public class User {
+import java.io.Serializable;
 
+public class User implements Serializable {
+
+	private static final long serialVersionUID = -8314522527840310390L;
 	private String firstName;
 	private String sureName;
 	private int years;
 
 	public User(String firstName, String sureName, int years) {
+		super();
 		this.firstName = firstName;
 		this.sureName = sureName;
 		this.years = years;
@@ -50,16 +54,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("User: ");
-		builder.append(firstName);
-		builder.append(" ");
-		builder.append(sureName);
-		builder.append(" ");
-		builder.append(years);
-		builder.append(" years old");
-
-		return builder.toString();
+		return "User: "+firstName+" "+sureName+" "+years+" years old";
 	}
 
 }
