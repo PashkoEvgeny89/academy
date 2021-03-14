@@ -54,7 +54,15 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User: "+firstName+" "+sureName+" "+years+" years old";
+		
+		StringBuilder sb=new StringBuilder();
+		sb.append("User: ");
+		sb.append(firstName);
+		sb.append(" ");
+		sb.append(years);
+		sb.append(" years old");
+		
+		return sb.toString();
 	}
 
 }
