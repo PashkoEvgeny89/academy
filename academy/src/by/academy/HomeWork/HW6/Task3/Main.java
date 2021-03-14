@@ -33,7 +33,7 @@ public class Main {
 
 		for (User user : list) {
 			try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-					new FileOutputStream(new File(dir, user.getFirstName() + "_" + user.getSureName())))) {
+					new FileOutputStream(new File(dir, user.getFirstName() + "_" + user.getSureName()+".txt")))) {
 				objectOutputStream.writeObject(user);
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
