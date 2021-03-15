@@ -16,8 +16,8 @@ public class Task1 {
 
 			String text;
 			while (!(text = bufferedReader.readLine()).equals("stop")) {
-				
-				bufferedWriter.write(text+"\n");
+
+				bufferedWriter.write(text + "\n");
 				bufferedWriter.flush();
 			}
 
