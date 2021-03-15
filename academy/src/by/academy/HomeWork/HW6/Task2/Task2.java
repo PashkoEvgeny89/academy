@@ -15,15 +15,15 @@ public class Task2 {
 		try (FileInputStream fileIn = new FileInputStream(new File(INPUT_FILE_PATH));
 				FileOutputStream fileOut = new FileOutputStream(new File(OUTPUT_FILE_PATH))) {
 
-			int a;
-			while ((a = fileIn.read()) != -1) {
+			int c;
+			while ((c = fileIn.read()) != -1) {
 
-				if (a != 32) { // 32 character " "
-					fileOut.write(a);
+				if (c != 32) { // 32 character " "
+					fileOut.write(c);
 				}
 			}
-		} catch (IOException message) {
-			message.getStackTrace();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
