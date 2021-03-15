@@ -15,13 +15,14 @@ public class Task1 {
 				BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_PATH))) {
 
 			String text;
-			while (!"stop".equals(text = bufferedReader.readLine())) {
-				bufferedWriter.write(text);
-				bufferedWriter.newLine();
+			while (!(text = bufferedReader.readLine()).equals("stop")) {
+				
+				bufferedWriter.write(text+"\n");
+				bufferedWriter.flush();
 			}
 
-		} catch (IOException ex) {
-			System.out.println(ex.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
