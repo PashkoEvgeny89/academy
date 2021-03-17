@@ -8,7 +8,7 @@ public class BufferedWriterDemo {
 	public static void main(String[] args) {
 		try (BufferedWriter bufferedWriter = new BufferedWriter(
 				new FileWriter("src\\by\\academy\\classwork\\lesson17\\buffWriter.txt"))) {
-			String text = "Привет мир!";
+			String text = "Приветhkhghjk мир!";
 			bufferedWriter.write(text);
 			bufferedWriter.newLine();
 			bufferedWriter.write(text);
