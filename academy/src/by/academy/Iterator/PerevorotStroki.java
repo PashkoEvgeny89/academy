@@ -1,7 +1,5 @@
 package by.academy.Iterator;
 
-import java.util.ArrayList;
-
 public class PerevorotStroki {
 
 	//revers1
