@@ -25,6 +25,7 @@ public class Task1 {
 				.collect(Collectors.toMap(x -> x, x -> "Number: " + x));
 
 		System.out.println(map);
+		System.out.println("/*sdvfv*/");
 
 	}
 
